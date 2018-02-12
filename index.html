@@ -28,7 +28,8 @@ var RTCSessionDescription = window.RTCSessionDescription || window.mozRTCSession
 navigator.getUserMedia = navigator.getUserMedia || navigator.mozGetUserMedia || navigator.webkitGetUserMedia || navigator.msGetUserMedia;
 
 var twilioIceServers = [
-     { url: 'stun:global.stun.twilio.com:3478?transport=udp' }
+  { url: 'turn:139.159.227.179:3491?transport=udp',
+  username: "zac", credential: "cursorzz"}
      // { url: 'turn:global.turn.twilio.com:3478?transport=udp',
      //   username: 'ea757ad2c42b932c7f2abe480295e7eb039dc2b13b78c86bc412818ed51e5eea',
      //   credential: 'MPnnojPRoPDI+B3kLONGF9P440Lb8NkrTq+FxxJBVro=' },
@@ -40,7 +41,7 @@ var twilioIceServers = [
      //   credential: 'MPnnojPRoPDI+B3kLONGF9P440Lb8NkrTq+FxxJBVro=' } 
 ];
 var configuration = {"iceServers": [{"url": "stun:stun.l.google.com:19302"}]};
-// configuration.iceServers = twilioIceServers;
+configuration.iceServers = twilioIceServers;
 
 var pcPeers = {};
 var selfView = document.getElementById("selfView");
